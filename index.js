@@ -1,0 +1,16 @@
+//Requires
+const express = require("express")
+const app = express()
+const path = require("path")
+const bdy = require("body-parser")
+const sessionxpres = require("express-session")
+const bcrypt = require("bcrypt")
+const mongoose = require("mongoose")
+mongoose.connect('mongodb://localhost:27017/proyecto', {useUnifiedTopology: true, useNewUrlParser:true})
+app.use(sessionxpres({secret:"session", saveUninitialized:false, resave:false}))
+app.use(express.static("public"))
+app.use(bdy.urlencoded({extended:true}))
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "/src/views"))
+
+app.listen(3002, ()=>{console.log("listening in port 3000")})
