@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style_index.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+        Sistema de control de computo
+        </a>
+        <form action="/" method="POST"><input type="submit" value="cerrar" class = "btn btn-primary"></form>
+    </nav>
+    <div class="row">
+      <div class="col-lg-4 no-padding">
+        <div class = "container bienvenida">
+          <h1 class="display-4">Bienvenido, <%= info.jefe.nombre_jefe%></h1>
+          <p class="lead">Departamento de <%= info.nombre  %>.</p>
+        </div>
+      </div>
+      <div class="col-lg-8 no-padding">
+        <div class = "ima">
+          <img src="Images/tec-madero.jpg" alt="asdasd">
+        </div>
+      </div>
+    </div>
+    <hr class = "my-4">
+
+    <div class="jumbotron">
+      <h1 class="display-4">Informacion general.</h1>
+      <p class="lead">Nombre del departamento: <%= info.nombre %></p>
+      <p class="lead">#ID: <%= info.jefe._id%></p>
+      <p class="lead">Administrador: <%= info.jefe.nombre_jefe %></p>
+      <p class="lead">Correo electronico del admin: <%= info.jefe.email %></p>
+      <p class="lead">Telefono: <%= info.jefe.telefono %></p>
+      <p class="lead">Correo del departamento: <%= info.email_dep %></p>
+      <p class="lead">Telefono del departamento: <%= info.telefono_dep %></p>
+      <hr class="my-4">
+      <p>Para modificar la informacion contacte con el administrador de la base de datos.</p>
+    </div>
+
+    <section class = "container opciones">
+      <div class="row">
+        <div class="col-lg-4">
+          <div>
+            <h2>Visualizar equipos en el departamento</h2>
+            <hr class = "my-4">
+            <a href="equipos" class = "btn btn-primary">Acceder</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div>
+            <h2>Mandar equipo a mantenimiento</h2>
+            <hr class = "my-4">
+            <a href="#" class = "btn btn-primary">Acceder</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div>
+            <h2>Registrar equipo en el departamento</h2>
+            <hr class = "my-4">
+            <a href="registro_equipo" class = "btn btn-primary">Acceder</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+</body>
+</html>

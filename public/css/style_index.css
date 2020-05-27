@@ -1,0 +1,34 @@
+nav{
+    font-family: 'Bree Serif', serif;
+    background-color: wheat;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+#brand-right{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+body{background-color: gray;}
+.carousel-inner{ padding : 100px;}
+.carousel-item{padding: 25px;}
+.jumbotron{
+    background-color: whitesmoke;
+    border-radius: 0;
+}
+.no-padding{padding: 0;}
+img{
+    width: 100%;
+}
+.bienvenida{
+    padding: 35px;
+    margin-top: 50px;
+    background-color: white;
+}
+.row{
+    background-color: white;
+    padding: 35px;
+}
+.opciones{
+    padding: 30px
+}
