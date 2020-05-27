@@ -49,3 +49,32 @@ app.post("/",(req, res) =>{
     req.session.user = undefined
     res.redirect("/login")
  })
+
+ app.get("/login",(req, res)=>{ 
+    if(req.session.user == null){
+        res.render("login", {warning: undefined}) 
+    }else{
+        res.send("No puede entrar aqui")
+    }
+})
+app.post("/login", async (req, res) => { 
+
+    if( req.body.username<1 || req.body.pass.length<1 ){
+        console.log("dentro del warning---------------------------------")
+        res.render("login", {warning: "Llene todos los campos, por favor."})
+    }else{
+        dep_model.findOne({"jefe.email": req.body.username}, (err, doc)=>{
+            try {
+                if(doc != null && doc.jefe.email === req.body.username){
+                    Usuario_on = doc
+                    req.session.user = doc.jefe.email;
+                    res.redirect("/");
+                }else{
+                    res.render("login", {warning:"error al iniciar sesion"})
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
+    }
+})
