@@ -78,3 +78,18 @@ app.post("/login", async (req, res) => {
         })
     }
 })
+app.get("/equipos", (req, res)=>{
+
+    if(req.session.user == undefined){
+        res.redirect("/login")
+    }else{
+        console.log(Usuario_on.nombre)
+        let pcs = null;
+        dep_model.findOne({nombre: Usuario_on.nombre}, (err, doc)=>{
+            pcs = doc
+            res.render("equipos.ejs", {info: doc})   
+        })
+        console.log(pcs)
+        
+    }
+})
