@@ -1,0 +1,56 @@
+.formcont{
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    padding: 25px;
+}
+#brand-right{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.title-login{
+    font-family: 'Bree Serif', serif;
+    font-size: 100px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 70%;
+    margin-top: 20px;
+
+}
+nav{
+    font-family: 'Bree Serif', serif;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+body{
+    background-color: gray;
+}
+input[type = "submit"]{
+    margin-top: 10px;
+}
+.form-group{
+    padding: 15px;
+}
+img{
+    text-align: center;
+}
+.card-header{
+text-align: center;
+}
+input[placeholder = "Email"]{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+input[placeholder = "Password"]{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#img-login{
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+}
