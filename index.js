@@ -38,3 +38,14 @@ const departamento = mongoose.Schema({
     ubicacion: String,
     computadoras: [computadora],
 })
+app.get("/", (req, res)=>{
+    if(req.session.user === undefined){
+        res.redirect("/login")
+    }else{
+        res.render("index.ejs", {info : Usuario_on})
+    }
+})
+app.post("/",(req, res) =>{ 
+    req.session.user = undefined
+    res.redirect("/login")
+ })
